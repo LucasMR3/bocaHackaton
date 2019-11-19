@@ -4,13 +4,13 @@ import java.util.Scanner;
 
 public class Bomba {
 	public static void main(String[] args) {
-		int xa, ya, xb, yb, reps = 0, actualX, actualY = 0, alarms = 0;
+		int xA, yA, xB, yB, reps = 0, actualX, actualY = 0, alarms = 0, safe = 0;
 		Scanner sc = new Scanner(System.in);
 
-		xa = sc.nextInt();
-		ya = sc.nextInt();
-		xb = sc.nextInt();
-		yb = sc.nextInt();
+		xA = sc.nextInt();
+		yA = sc.nextInt();
+		xB = sc.nextInt();
+		yB = sc.nextInt();
 
 		reps = sc.nextInt();
 
@@ -18,23 +18,17 @@ public class Bomba {
 			actualX = sc.nextInt();
 			actualY = sc.nextInt();
 
-			if (actualX <= xa) {
-				if (actualY >= ya) {
-					if (actualX >= xb) {
-						if (actualY <= yb) {
-							alarms++;
-						}
-					}
-				}
-			}
+			if (actualX <= xA && actualY >= yA && actualX >= xB && actualY <= yB)
+				alarms++;
+			else
+				safe++;
 		}
 
-		int safe = reps - alarms;
-		if (safe == reps) {
-			System.out.println("SAFE");
-		} else {
+		if (safe == reps)
+			System.out.print("SAFE");
+		else
 			System.out.printf("ALARM\n%d", alarms);
-		}
+
 		sc.close();
 	}
 }
