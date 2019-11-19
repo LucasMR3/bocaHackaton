@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 public class Bomba {
 	public static void main(String[] args) {
-		int xA, yA, xB, yB, reps = 0, actualX, actualY = 0, alarms = 0, safe = 0;
+		int xA, yA, xB, yB, reps, actualX, actualY, alarms = 0, safe = 0;
 		Scanner sc = new Scanner(System.in);
 
 		xA = sc.nextInt();
